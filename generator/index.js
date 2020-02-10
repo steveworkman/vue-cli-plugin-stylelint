@@ -17,7 +17,9 @@ module.exports = (api, options = {}) => {
     scripts: {
       'lint:style': 'vue-cli-service lint:style',
     },
-    devDependencies: {},
+    devDependencies: {
+      stylelint: '^13.0.0',
+    },
     vue: {
       pluginOptions: {
         lintStyleOnBuild: lintStyleOn.includes('build'),
