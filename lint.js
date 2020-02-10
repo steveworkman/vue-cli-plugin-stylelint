@@ -7,7 +7,7 @@
 */
 
 const { execSync } = require('child_process');
-const chalk = require('chalk');
+const { chalk } = require('@vue/cli-shared-utils');
 const stylelint = require('stylelint');
 const CodeframeFormatter = require('stylelint-codeframe-formatter');
 

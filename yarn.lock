@@ -1401,7 +1401,7 @@
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.0.tgz#8b63ab7f1aa5321248aad5ac890a485656dcea4d"
   integrity sha512-te5lMAWii1uEJ4FwLjzdlbw3+n0FZNOvFXHxQDKeT0dilh7HOzdMzV2TrJVUzq8ep7J4Na8OUYPRLSQkJHAlrg==
 
-"@vue/cli-shared-utils@^3.12.1":
+"@vue/cli-shared-utils@^3.12.0", "@vue/cli-shared-utils@^3.12.1":
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-3.12.1.tgz#bcf076287ddadeebbb97c6a748dfe9ff50ec8df0"
   integrity sha512-jFblzRFjutGwu5utOKdVlPlsbA1lBUNNQlAThzNqej+JtTKJjnvjlhjKX0Gq0oOny5FjKWhoyfQ74p9h1qE6JQ==
@@ -1419,7 +1419,7 @@
     semver "^6.0.0"
     string.prototype.padstart "^3.0.0"
 
-"@vue/cli-test-utils@^3.3.0":
+"@vue/cli-test-utils@^3.12.0":
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/@vue/cli-test-utils/-/cli-test-utils-3.12.1.tgz#f31a0e85673cb7042ae842a1aec3993db6253ce1"
   integrity sha512-3GyUQ87VGMn9Glv3wOfMdG289WmFvKEA8TxzdsDiUqjOa8zzLfKL5lfkwe4Czf8SpAXtmtQNvuNsPk6v548LiA==
@@ -1478,7 +1478,7 @@
     vue-cli-plugin-apollo "^0.20.0"
     watch "^1.0.2"
 
-"@vue/cli@^3.3.0":
+"@vue/cli@^3.12.0":
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/@vue/cli/-/cli-3.12.1.tgz#a4df8ada081e59855ae95d8a46b54ec6c37d2bc5"
   integrity sha512-+F6wc5AzsvHuk15FjTt4UjETB48DDOQzEFvTj37lXqWOJLZ2x5TIxWiFWwUHTI1szbZoxtwKwqemaXtzhyGTKA==
