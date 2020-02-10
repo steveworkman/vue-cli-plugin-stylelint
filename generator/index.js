@@ -35,15 +35,15 @@ module.exports = (api, options = {}) => {
     if (typeof config === 'string') {
       if (config === 'stylelint-config-standard') {
         Object.assign(pkg.devDependencies, {
-          'stylelint-config-standard': '^18.2.0',
+          'stylelint-config-standard': '^20.0.0',
         });
       } else if (config === 'stylelint-config-primer') {
         Object.assign(pkg.devDependencies, {
-          'stylelint-config-primer': '^2.2.5',
+          'stylelint-config-primer': '^9.0.0',
         });
       } else if (config === '@ascendancyy/stylelint-config-kanbaru') {
         Object.assign(pkg.devDependencies, {
-          '@ascendancyy/stylelint-config-kanbaru': '^1.0.1',
+          '@ascendancyy/stylelint-config-kanbaru': '^2.0.0',
         });
       }
     }
@@ -53,7 +53,7 @@ module.exports = (api, options = {}) => {
 
   if (lintStyleOn.includes('commit')) {
     Object.assign(pkg.devDependencies, {
-      'lint-staged': '^6.0.0',
+      'lint-staged': '^10.0.0',
     });
     pkg.gitHooks = {
       'pre-commit': 'lint-staged',

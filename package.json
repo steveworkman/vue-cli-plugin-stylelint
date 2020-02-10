@@ -31,9 +31,9 @@
     "inquirer": "^7.0.4",
     "javascript-stringify": "^2.0.1",
     "micromatch": "^4.0.2",
-    "stylelint": "^9.10.1",
+    "stylelint": "^13.1.0",
     "stylelint-codeframe-formatter": "^1.0.4",
-    "stylelint-webpack-plugin": "^0.10.5"
+    "stylelint-webpack-plugin": "^1.2.3"
   },
   "devDependencies": {
     "@ascendancyy/eslint-config-eva": "^3.0.0",
