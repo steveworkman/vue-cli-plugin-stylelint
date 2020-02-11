@@ -28,29 +28,36 @@ module.exports = (api, options = {}) => {
     },
     stylelint: {
       root: true,
+      extends: [],
     },
   };
 
-  const { config = 'stylelint-config-standard' } = options;
-  if (typeof config === 'string' || Array.isArray(config)) {
-    pkg.stylelint.extends = config;
-    if (typeof config === 'string') {
-      if (config === 'stylelint-config-standard') {
-        Object.assign(pkg.devDependencies, {
-          'stylelint-config-standard': '^20.0.0',
-        });
-      } else if (config === 'stylelint-config-primer') {
-        Object.assign(pkg.devDependencies, {
-          'stylelint-config-primer': '^9.0.0',
-        });
-      } else if (config === '@ascendancyy/stylelint-config-kanbaru') {
-        Object.assign(pkg.devDependencies, {
-          '@ascendancyy/stylelint-config-kanbaru': '^2.0.0',
-        });
-      }
-    }
-  } else {
-    Object.assign(pkg.stylelint, config);
+  const { config } = options;
+
+  if (config === 'standard') {
+    pkg.stylelint.extends.push('stylelint-config-standard');
+    Object.assign(pkg.devDependencies, {
+      'stylelint-config-standard': '^20.0.0',
+    });
+  } else if (config === 'primer') {
+    pkg.stylelint.extends.push('stylelint-config-primer');
+    Object.assign(pkg.devDependencies, {
+      'stylelint-config-primer': '^9.0.0',
+    });
+  } else if (config === 'prettier') {
+    pkg.stylelint.extends.push('stylelint-config-standard');
+    pkg.stylelint.extends.push('stylelint-prettier/recommended');
+    Object.assign(pkg.devDependencies, {
+      'stylelint-config-standard': '^20.0.0',
+      'stylelint-config-prettier': '^8.0.1',
+      'stylelint-prettier': '^1.1.2',
+      prettier: '^1.19.1',
+    });
+  } else if (config === 'kanbaru') {
+    pkg.stylelint.extends.push('@ascendancyy/stylelint-config-kanbaru');
+    Object.assign(pkg.devDependencies, {
+      '@ascendancyy/stylelint-config-kanbaru': '^2.0.0',
+    });
   }
 
   if (lintStyleOn.includes('commit')) {

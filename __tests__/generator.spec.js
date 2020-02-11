@@ -1,82 +1,77 @@
 const generateWithPlugin = require('@vue/cli-test-utils/generateWithPlugin');
 
-test('default', async () => {
+test('base', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@ascendancyy/vue-cli-plugin-stylelint',
+    id: '@samhammer/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {},
   });
 
   expect(pkg.scripts['lint:style']).toBeTruthy();
-  expect(pkg.devDependencies).toHaveProperty('stylelint-config-standard');
 });
 
 test('standard', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@ascendancyy/vue-cli-plugin-stylelint',
+    id: '@samhammer/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
-      config: 'stylelint-config-standard',
+      config: 'standard',
     },
   });
 
   expect(pkg.scripts['lint:style']).toBeTruthy();
   expect(pkg.devDependencies).toHaveProperty('stylelint-config-standard');
+  expect(pkg.stylelint.extends).toEqual(['stylelint-config-standard']);
 });
 
 test('primer', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@ascendancyy/vue-cli-plugin-stylelint',
+    id: '@samhammer/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
-      config: 'stylelint-config-primer',
+      config: 'primer',
     },
   });
 
   expect(pkg.scripts['lint:style']).toBeTruthy();
   expect(pkg.devDependencies).toHaveProperty('stylelint-config-primer');
+  expect(pkg.stylelint.extends).toEqual(['stylelint-config-primer']);
+});
+
+test('prettier', async () => {
+  const { pkg } = await generateWithPlugin({
+    id: '@samhammer/vue-cli-plugin-stylelint',
+    apply: require('../generator'),
+    options: {
+      config: 'prettier',
+    },
+  });
+
+  expect(pkg.scripts['lint:style']).toBeTruthy();
+  expect(pkg.devDependencies).toHaveProperty('stylelint-config-standard');
+  expect(pkg.devDependencies).toHaveProperty('stylelint-config-prettier');
+  expect(pkg.devDependencies).toHaveProperty('stylelint-prettier');
+  expect(pkg.devDependencies).toHaveProperty('prettier');
+  expect(pkg.stylelint.extends).toEqual(['stylelint-config-standard', 'stylelint-prettier/recommended']);
 });
 
 test('kanbaru', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@ascendancyy/vue-cli-plugin-stylelint',
+    id: '@samhammer/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
-      config: '@ascendancyy/stylelint-config-kanbaru',
+      config: 'kanbaru',
     },
   });
 
   expect(pkg.scripts['lint:style']).toBeTruthy();
   expect(pkg.devDependencies).toHaveProperty('@ascendancyy/stylelint-config-kanbaru');
-});
-
-test('custom preset', async () => {
-  const { pkg } = await generateWithPlugin({
-    id: '@ascendancyy/vue-cli-plugin-stylelint',
-    apply: require('../generator'),
-    options: {
-      config: {
-        extends: 'stylelint-config-standard',
-        rules: {
-          indentation: 2,
-        },
-      },
-    },
-  });
-
-  expect(pkg.stylelint).toEqual({
-    root: true,
-    extends: 'stylelint-config-standard',
-    rules: {
-      indentation: 2,
-    },
-  });
-  expect(pkg.devDependencies).not.toHaveProperty('stylelint-config-standard');
+  expect(pkg.stylelint.extends).toEqual(['@ascendancyy/stylelint-config-kanbaru']);
 });
 
 test('lint on save', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@ascendancyy/vue-cli-plugin-stylelint',
+    id: '@samhammer/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       lintStyleOn: 'build',
@@ -87,7 +82,7 @@ test('lint on save', async () => {
 
 test('lint on commit', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@ascendancyy/vue-cli-plugin-stylelint',
+    id: '@samhammer/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       lintStyleOn: 'commit',
@@ -103,7 +98,7 @@ test('lint on commit', async () => {
 
 test('cancel', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@ascendancyy/vue-cli-plugin-stylelint',
+    id: '@samhammer/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       overwriteConfig: 'abort',

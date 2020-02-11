@@ -15,17 +15,22 @@ const questions = [
     choices: [
       {
         name: 'Standard',
-        value: 'stylelint-config-standard',
+        value: 'standard',
         short: 'Standard',
       }, {
         name: 'Primer',
-        value: 'stylelint-config-primer',
+        value: 'primer',
         short: 'Primer',
+      },
+      {
+        name: 'Prettier',
+        value: 'prettier',
+        short: 'prettier',
       },
       new inquirer.Separator(),
       {
         name: 'Kanbaru',
-        value: '@ascendancyy/stylelint-config-kanbaru',
+        value: 'kanbaru',
         short: 'Kanbaru',
       },
     ],
