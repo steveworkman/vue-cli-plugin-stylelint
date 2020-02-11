@@ -39,13 +39,22 @@ module.exports = {
 
 ## Installing in an already created project
 
+via vue-cli (recommended)
 ```
-npm install -D @samhammer/vue-cli-plugin-stylelint
+vue add @samhammer/vue-cli-plugin-stylelint
+```
+
+via yarn
+```
+yarn add -D @samhammer/vue-cli-plugin-stylelint
 vue invoke @samhammer/vue-cli-plugin-stylelint
 ```
 
-> There is also a shorthand to invoke the plugin  
-> `vue invoke @samhammer/stylelint`
+via npm
+```
+npm install --save-dev @samhammer/vue-cli-plugin-stylelint
+vue invoke @samhammer/vue-cli-plugin-stylelint
+```
 
 ## webpack-chain Injections
 
