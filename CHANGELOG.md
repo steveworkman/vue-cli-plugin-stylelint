@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2.2.1 (01-09-2020)
+
+### Fixed
+
+- Added missing dependency `stylelint-scss` for the `scss` config
+
 ## 2.2.0 (01-09-2020)
 
 ### Added

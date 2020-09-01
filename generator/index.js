@@ -63,6 +63,7 @@ module.exports = (api, options = {}) => {
     pkg.stylelint.extends.push('stylelint-config-recommended-scss');
     Object.assign(pkg.devDependencies, {
       'stylelint-config-recommended-scss': '^4.2.0',
+      'stylelint-scss': "^3.18.0"
     });
   }
 
