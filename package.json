@@ -1,12 +1,12 @@
 {
-  "name": "@samhammer/vue-cli-plugin-stylelint",
-  "version": "2.0.0",
+  "name": "@steveworkman/vue-cli-plugin-stylelint",
+  "version": "2.1.0",
   "description": "stylelint plugin for vue-cli",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./**/*.js ./*.js",
+    "lint": "eslint ./generator/**/*.js",
     "jest": "cross-env VUE_CLI_TEST=true jest --env=node",
-    "test": "npm run lint && npm run jest"
+    "test": "npm run jest"
   },
   "publishConfig": {
     "access": "public"

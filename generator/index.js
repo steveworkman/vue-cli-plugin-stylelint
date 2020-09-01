@@ -58,6 +58,11 @@ module.exports = (api, options = {}) => {
     Object.assign(pkg.devDependencies, {
       '@ascendancyy/stylelint-config-kanbaru': '^2.0.0',
     });
+  }  else if (config === 'scss') {
+    pkg.stylelint.extends.push('stylelint-config-recommended-scss');
+    Object.assign(pkg.devDependencies, {
+      'stylelint-config-recommended-scss': '^4.2.0',
+    });
   }
 
   if (lintStyleOn.includes('commit')) {
@@ -81,6 +86,4 @@ module.exports = (api, options = {}) => {
     },
   });
   api.extendPackage(pkg);
-
-  api.onCreateComplete(async () => { await lint(api, { silent: true }); });
 };

@@ -36,24 +36,36 @@ module.exports = {
   }
 }
 ```
+## Installing via CLI preset
+
+Add the following to your preset.json
+```
+"@steveworkman/vue-cli-plugin-stylelint": {
+  "version": "^2.1.0",
+  "config": {
+    ...
+  }
+}
+```
+
 
 ## Installing in an already created project
 
 via vue-cli (recommended)
 ```
-vue add @samhammer/vue-cli-plugin-stylelint
+vue add @steveworkman/vue-cli-plugin-stylelint
 ```
 
 via yarn
 ```
-yarn add -D @samhammer/vue-cli-plugin-stylelint
-vue invoke @samhammer/vue-cli-plugin-stylelint
+yarn add -D @steveworkman/vue-cli-plugin-stylelint
+vue invoke @steveworkman/vue-cli-plugin-stylelint
 ```
 
 via npm
 ```
-npm install --save-dev @samhammer/vue-cli-plugin-stylelint
-vue invoke @samhammer/vue-cli-plugin-stylelint
+npm install --save-dev @steveworkman/vue-cli-plugin-stylelint
+vue invoke @steveworkman/vue-cli-plugin-stylelint
 ```
 
 ## webpack-chain Injections

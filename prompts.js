@@ -27,6 +27,11 @@ const questions = [
         value: 'prettier',
         short: 'prettier',
       },
+      {
+        name: 'SCSS',
+        value: 'scss',
+        short: 'scss',
+      },
       new inquirer.Separator(),
       {
         name: 'Kanbaru',
