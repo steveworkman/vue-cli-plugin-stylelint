@@ -29,6 +29,7 @@ module.exports = (api, options = {}) => {
     stylelint: {
       root: true,
       extends: [],
+      rules: {}
     },
   };
 
@@ -65,9 +66,16 @@ module.exports = (api, options = {}) => {
     });
   }
 
+  // Add pre-defined rules in if you can
+  const { rules } = options;
+
+  if (rules) {
+    Object.assign(pkg.stylelint.rules, rules);
+  }
+
   if (lintStyleOn.includes('commit')) {
     Object.assign(pkg.devDependencies, {
-      'lint-staged': '^10.0.0',
+      'lint-staged': '^9.5.0',
     });
     pkg.gitHooks = {
       'pre-commit': 'lint-staged',
@@ -87,3 +95,4 @@ module.exports = (api, options = {}) => {
   });
   api.extendPackage(pkg);
 };
+

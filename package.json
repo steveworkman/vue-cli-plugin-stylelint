@@ -1,6 +1,6 @@
 {
   "name": "@steveworkman/vue-cli-plugin-stylelint",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "stylelint plugin for vue-cli",
   "main": "index.js",
   "scripts": {
@@ -13,19 +13,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SamhammerAG/vue-cli-plugin-stylelint.git"
+    "url": "git+https://github.com/steveworkman/vue-cli-plugin-stylelint.git"
   },
   "keywords": [
     "vue",
     "cli",
     "stylelint"
   ],
-  "author": "Stephen Lam, Roland Schmitt",
+  "author": "Stephen Lam, Roland Schmitt, Steve Workman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SamhammerAG/vue-cli-plugin-stylelint/issues"
+    "url": "https://github.com/steveworkman/vue-cli-plugin-stylelint/issues"
   },
-  "homepage": "https://github.com/SamhammerAG/vue-cli-plugin-stylelint#readme",
+  "homepage": "https://github.com/steveworkman/vue-cli-plugin-stylelint#readme",
   "dependencies": {
     "@vue/cli-shared-utils": "^3.12.0",
     "inquirer": "^7.0.4",
@@ -35,7 +35,6 @@
     "stylelint-webpack-plugin": "^1.2.3"
   },
   "devDependencies": {
-    "@ascendancyy/eslint-config-eva": "^3.0.0",
     "@vue/cli": "^3.12.0",
     "@vue/cli-test-utils": "^3.12.0",
     "cross-env": "^7.0.0",

@@ -2,7 +2,7 @@ const generateWithPlugin = require('@vue/cli-test-utils/generateWithPlugin');
 
 test('base', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@samhammer/vue-cli-plugin-stylelint',
+    id: '@steveworkman/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {},
   });
@@ -12,7 +12,7 @@ test('base', async () => {
 
 test('standard', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@samhammer/vue-cli-plugin-stylelint',
+    id: '@steveworkman/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       config: 'standard',
@@ -26,7 +26,7 @@ test('standard', async () => {
 
 test('primer', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@samhammer/vue-cli-plugin-stylelint',
+    id: '@steveworkman/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       config: 'primer',
@@ -40,7 +40,7 @@ test('primer', async () => {
 
 test('prettier', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@samhammer/vue-cli-plugin-stylelint',
+    id: '@steveworkman/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       config: 'prettier',
@@ -57,7 +57,7 @@ test('prettier', async () => {
 
 test('kanbaru', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@samhammer/vue-cli-plugin-stylelint',
+    id: '@steveworkman/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       config: 'kanbaru',
@@ -69,9 +69,42 @@ test('kanbaru', async () => {
   expect(pkg.stylelint.extends).toEqual(['@ascendancyy/stylelint-config-kanbaru']);
 });
 
+test('scss', async () => {
+  const { pkg } = await generateWithPlugin({
+    id: '@steveworkman/vue-cli-plugin-stylelint',
+    apply: require('../generator'),
+    options: {
+      config: 'scss',
+    },
+  });
+
+  expect(pkg.scripts['lint:style']).toBeTruthy();
+  expect(pkg.devDependencies).toHaveProperty('stylelint-config-recommended-scss');
+  expect(pkg.stylelint.extends).toEqual(['stylelint-config-recommended-scss']);
+});
+
+test('rules', async () => {
+  const { pkg } = await generateWithPlugin({
+    id: '@steveworkman/vue-cli-plugin-stylelint',
+    apply: require('../generator'),
+    options: {
+      rules: {
+        "comment-empty-line-before": "always",
+        "max-empty-lines": 1
+      },
+    },
+  });
+
+  expect(pkg.scripts['lint:style']).toBeTruthy();
+  expect(pkg.stylelint.rules).toEqual({
+    "comment-empty-line-before": "always",
+    "max-empty-lines": 1
+  });
+});
+
 test('lint on save', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@samhammer/vue-cli-plugin-stylelint',
+    id: '@steveworkman/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       lintStyleOn: 'build',
@@ -82,7 +115,7 @@ test('lint on save', async () => {
 
 test('lint on commit', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@samhammer/vue-cli-plugin-stylelint',
+    id: '@steveworkman/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       lintStyleOn: 'commit',
@@ -98,7 +131,7 @@ test('lint on commit', async () => {
 
 test('cancel', async () => {
   const { pkg } = await generateWithPlugin({
-    id: '@samhammer/vue-cli-plugin-stylelint',
+    id: '@steveworkman/vue-cli-plugin-stylelint',
     apply: require('../generator'),
     options: {
       overwriteConfig: 'abort',
