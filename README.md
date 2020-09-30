@@ -1,6 +1,6 @@
-# @samhammer/vue-cli-plugin-stylelint
+# @steveworkman/vue-cli-plugin-stylelint
 
-> stylelint plugin for vue-cli
+> stylelint plugin for vue-cli based on versions by @samhammer and @ascendancyy
 
 ## Injected commands
 
